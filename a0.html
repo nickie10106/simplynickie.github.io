@@ -1,0 +1,656 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Simply_Nickie - Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    
+        <!-- Le styles -->
+        <link href="css/preloader.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/owl.carousel.css" rel="stylesheet">
+        <link href="css/magnific-popup.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:700,800&amp;subset=latin-ext" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i&amp;subset=cyrillic,latin-ext" rel="stylesheet"> 
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic,600italic,600&amp;subset=latin,greek-ext,cyrillic-ext,greek,vietnamese,cyrillic' rel='stylesheet' type='text/css'>
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="images/favicon.png"><!--favicon image-->
+   <style type="text/css">
+
+<!--
+
+
+
+.kisser {
+
+  position:absolute;
+  z-index: 1000;
+  top:0;
+
+  left:0;
+
+  visibility:hidden;
+
+}
+
+-->
+
+</style>
+
+
+
+<script language="JavaScript1.2" type="text/JavaScript">
+
+<!-- cloak
+
+
+
+//Kissing trail- By dij8 (dij8@dij8.com)
+
+//Modified by Dynamic Drive for bug fixes
+
+//Visit http://www.dynamicdrive.com for this script
+
+
+
+kisserCount = 15 //maximum number of images on screen at one time
+
+curKisser = 0 //the last image DIV to be displayed (used for timer)
+
+kissDelay = 1000 //duration images stay on screen (in milliseconds)
+
+kissSpacer = 50 //distance to move mouse b4 next heart appears
+
+theimage = "lips_small.gif" //the 1st image to be displayed
+
+theimage2 = "small_heart.gif" //the 2nd image to be displayed
+
+
+
+
+
+//Browser checking and syntax variables
+
+var docLayers = (document.layers) ? true:false;
+
+var docId = (document.getElementById) ? true:false;
+
+var docAll = (document.all) ? true:false;
+
+var docbitK = (docLayers) ? "document.layers['":(docId) ? "document.getElementById('":(docAll) ? "document.all['":"document."
+
+var docbitendK = (docLayers) ? "']":(docId) ? "')":(docAll) ? "']":""
+
+var stylebitK = (docLayers) ? "":".style"
+
+var showbitK = (docLayers) ? "show":"visible"
+
+var hidebitK = (docLayers) ? "hide":"hidden"
+
+var ns6=document.getElementById&&!document.all
+
+//Variables used in script
+
+var posX, posY, lastX, lastY, kisserCount, curKisser, kissDelay, kissSpacer, theimage
+
+lastX = 0
+
+lastY = 0
+
+//Collection of functions to get mouse position and place the images
+
+function doKisser(e) {
+
+
+
+  posX = getMouseXPos(e)
+
+  posY = getMouseYPos(e)
+
+  if (posX>(lastX+kissSpacer)||posX<(lastX-kissSpacer)||posY>(lastY+kissSpacer)||posY<(lastY-kissSpacer)) {
+
+    showKisser(posX,posY)
+
+    lastX = posX
+
+    lastY = posY
+
+  }
+
+}
+
+// Get the horizontal position of the mouse
+
+function getMouseXPos(e) {
+
+  if (document.layers||ns6) {
+
+    return parseInt(e.pageX+10)
+
+  } else {
+
+    return (parseInt(event.clientX+10) + parseInt(document.body.scrollLeft))
+
+  }
+
+}
+
+// Get the vartical position of the mouse
+
+function getMouseYPos(e) {
+
+  if (document.layers||ns6) {
+
+    return parseInt(e.pageY)
+
+  } else {
+
+    return (parseInt(event.clientY) + parseInt(document.body.scrollTop))
+
+  }
+
+}
+
+//Place the image and start timer so that it disappears after a period of time
+
+function showKisser(x,y) {
+
+  var processedx=ns6? Math.min(x,window.innerWidth-75) : docAll? Math.min(x,document.body.clientWidth-55) : x
+
+  if (curKisser >= kisserCount) {curKisser = 0}
+  eval(docbitK + "kisser" + curKisser + docbitendK + stylebitK).left =  processedx + 'px'
+
+  eval(docbitK + "kisser" + curKisser + docbitendK + stylebitK).top = y + 'px'
+
+  eval(docbitK + "kisser" + curKisser + docbitendK + stylebitK + ".visibility = '" + showbitK + "'")
+
+  if (eval("typeof(kissDelay" + curKisser + ")")=="number") {
+
+    eval("clearTimeout(kissDelay" + curKisser + ")")
+
+  }
+
+  eval("kissDelay" + curKisser + " = setTimeout('hideKisser(" + curKisser + ")',kissDelay)")
+
+  curKisser += 1
+
+}
+
+//Make the image disappear
+
+function hideKisser(knum) {
+
+  eval(docbitK + "kisser" + knum + docbitendK + stylebitK + ".visibility = '" + hidebitK + "'")
+
+}
+
+
+
+function kissbegin(){
+
+//Let the browser know when the mouse moves
+
+if (docLayers) {
+
+  document.captureEvents(Event.MOUSEMOVE)
+
+  document.onMouseMove = doKisser
+
+} else {
+
+  document.onmousemove = doKisser
+
+}
+
+}
+
+window.onload=kissbegin
+
+// decloak -->
+
+</script>
+	</head>
+
+	<body class="multi-page">
+    
+    
+    	<!-- Preloader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="sk-cube-grid">
+                  <div class="sk-cube sk-cube1"></div>
+                  <div class="sk-cube sk-cube2"></div>
+                  <div class="sk-cube sk-cube3"></div>
+                  <div class="sk-cube sk-cube4"></div>
+                  <div class="sk-cube sk-cube5"></div>
+                  <div class="sk-cube sk-cube6"></div>
+                  <div class="sk-cube sk-cube7"></div>
+                  <div class="sk-cube sk-cube8"></div>
+                  <div class="sk-cube sk-cube9"></div>
+                </div>
+            </div><!--status-->
+            
+        </div><!--/preloader-->
+        
+		<!--HOME START-->
+		<div id="home" class="clearfix">
+			<!--HEADER START-->
+			<nav class="header home-section clearfix ">
+					<div class="nav-head bg-nav">
+						<div class="container nav-box">
+							<div class="logo">
+								<a href="index.html">
+									<img class="logo1" alt="logo" src="images/logo_white.png">
+								</a>
+							</div>
+							<div class="menu-box hidden-xs hidden-sm">
+								<ul class="navigation">
+									<li>
+                                    	<a href="#">Home</a>
+									                                    <li>
+                                    	<a href="about-me.html">About Me</a>
+                                       
+                                    </li>
+                                
+                                  <li><a href="portfolio.html">My Portfolio</a>
+                                    	<ul>
+                                        		<li><a href="d0.html">Designs</a>
+											</li>
+                                        	<li><a href="a0.html">Artwork</a></li>
+                                            <li>
+											<li><a href="p0.html">Photography</a></li>
+                                            <li>
+                                            	<a href="blogs.html">Blogs</a>
+                                                <ul>
+                                                    <li><a href="work1.html">Tea Blog</a></li>
+                                                    <li><a href="work2.html">Art Blog</a></li>
+                                                    <li><a href="work3.html">Nail Blog/a></li>
+                                                 
+												</ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+									<li><a href="contact.html">Contact</a></li>
+									<li>
+                                  
+							</div><!--/.menu-box-->
+							<div class="box-mobile hidden-lg hidden-md">
+								<div class="menu-btn" data-toggle="collapse" data-target=".nav-collapse">
+									<span class="fa fa-bars"></span>
+								</div>
+								<ul class="nav-collapse mobile-menu hidden-lg hidden-md"></ul>
+							</div><!--/.box-mobile-->	
+						</div><!--/.container-->
+					</div><!--/.nav-head-->
+			</nav><!--/.header-->
+			<!--HEADER END-->
+ 
+ 		<!--HERO  START-->
+            <div class="hero-box container">	
+            	<div class="small-caption-box">
+                	<p class="smal-caption-sub">Hello</p>
+                	<h3 class="hero-box-title animated" data-animated="fadeInUp"> This is My<span class="personal-color"></span> <span class="blink">Art-</span> <em class="fa fa-language"></em> </h3>
+                	<p></p>
+                    <div class="spacing20 clearboth"></div>
+					<p><a class="hero-btn" href="design.html">Designs</a> <a class="hero-btn  margin-right10" href="">Art</a> <a class="hero-btn" href="#">Photography</a></p>
+                </div><!--/.small-caption-box-->
+            </div><!--/.hero-box-->
+			<!--HERO  END-->
+		</div><!--/home end-->
+		<!--HOME END--> 
+		<!--HOME END--> 
+        
+        
+        
+        <!--WORKS START-->
+        <div id="works" class="content clearfix">
+        	<div class="container">
+            
+            
+            			<ul class="port-filter animated" data-animated="fadeInUp">
+                            <li><a class = "active" href="#" data-filter=".art">Art</a></li>
+                        </ul>
+
+                    	
+                    	<div class="row">
+                        	<div class="portfolio-body clearfix">
+                            	
+                                <div class="col-sm-4  port-item design art">
+                                    <a class="port-box" href="d1.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Bright <br>and Positive</h3>
+                                                <p>Name Logo</p>
+                                            </div>
+                                            <i class="fa fa-creative-commons"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/design_c/1.png">
+                                    </a>
+                                </div>
+                                
+                                <div class="col-sm-4  port-item art">
+                                    <a class="port-box" href="Art/a1.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Dreams <br>Abstract</h3>
+                                                <p>Digital Art</p>
+                                            </div>
+                                            <i class="fa fa-support"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/art/1.jpg">
+                                    </a>
+                                </div>
+								
+								                                <div class="col-sm-4  port-item photography">
+                                    <a class="port-box" href="work3.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Fantasy<br>Magic</h3>
+                                                <p>Digital Art</p>
+                                            </div>
+                                            <i class="fa fa-recycle"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/photo/2.jpg">
+                                    </a>
+                                </div>
+                                
+                                <div class="col-sm-4  port-item art">
+                                    <a class="port-box" href="a2.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Fantasy<br>Magic</h3>
+                                                <p>Digital Art</p>
+                                            </div>
+                                            <i class="fa fa-recycle"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/Art/2.jpg">
+                                    </a>
+                                </div>
+                                                                <div class="col-sm-4  port-item photography">
+                                    <a class="port-box" href="p4.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>White<br>Lily</h3>
+                                                <p>Flower Photography</p>
+                                            </div>
+                                            <i class="fa fa-recycle"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/photo/4.jpg">
+                                    </a>
+                                </div>
+                                
+                                <div class="col-sm-4  port-item design">
+                                    <a class="port-box" href="d2.html">
+                                    	<div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Eye-catching <br>and Vibrant</h3>
+                                                <p>Poster Design</p>
+                                            </div>
+                                            <i class="fa fa-compass"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/design_c/2.png">
+                                    </a>
+                                </div>
+								
+								   <div class="col-sm-4  port-item art">
+                                    <a class="port-box" href="a3.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Night Sky<br>Floating Constellation</h3>
+                                                <p>Digital Art</p>
+                                            </div>
+                                            <i class="fa fa-recycle"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/Art/3.png">
+                                    </a>
+                                </div>
+                                
+                                <div class="col-sm-4  port-item design development">
+                                    <a class="port-box" href="d3.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Minimalist<br>Positive</h3>
+                                                <p>Web Design</p>
+                                            </div>
+                                            <i class="fa fa-star-o"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/design_c/3.jpg">
+                                    </a>
+                                </div>
+								                                <div class="col-sm-4  port-item photography">
+                                    <a class="port-box" href="p3.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Pink<br>Beautiful</h3>
+                                                <p> Flower Photography</p>
+                                            </div>
+                                            <i class="fa fa-star-o"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/photo/3.jpg">
+                                    </a>
+                                </div>
+                                
+							
+                                <div class="col-sm-4  port-item design">
+                                    <a class="port-box" href="d4.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Vibrant<br>Vintage-chique</h3>
+                                                <p>Magazine Layout</p>
+                                            </div>
+                                            <i class="fa fa-trash-o"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/design_c/4.jpg">
+                                    </a>
+                                </div>
+                                       <div class="col-sm-4  port-item design">
+                                    <a class="port-box" href="p1.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Green<br>Park</h3>
+                                                <p>Flower Photography</p>
+                                            </div>
+                                            <i class="fa fa-trash-o"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/photo/1.jpg">
+                                    </a>
+                                </div>                         
+                                
+                                <div class="col-sm-4  port-item design ">
+                                    <a class="port-box" href="Corporate_design/d6.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Bright <br>Eye Catching.</h3>
+                                                <p>Name Card Design</p>
+                                            </div>
+                                            <i class="fa fa-creative-commons"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/design_c/6.jpg">
+                                    </a>
+                                </div>
+								
+								   <div class="col-sm-4  port-item design development">
+                                    <a class="port-box" href="Corporate_design/d5.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Pastel <br>Easy on the Eyes</h3>
+                                                <p>Brochure Design</p>
+                                            </div>
+                                            <i class="fa fa-creative-commons"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/design_c/5.png">
+                                    </a>
+                                </div>
+                                
+                                <div class="col-sm-4  port-item art">
+                                    <a class="port-box" href="a5.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Vintage <br>Ink</h3>
+                                                <p>Name Art</p>
+                                            </div>
+                                            <i class="fa fa-support"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/Art/5.png">
+                                    </a>
+                                </div>
+                                
+                                <div class="col-sm-4  port-item art">
+                                    <a class="port-box" href="Art/a4.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Pain <br>dark</h3>
+                                                <p>Name Art</p>
+                                            </div>
+                                            <i class="fa fa-recycle"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/Art/4.png">
+                                    </a>
+                                </div>
+																     <a class="port-box" href="Art/a6.html">
+                                        <div class="port-hover">
+                                        	<div class="port-inner">
+                                            	<h3>Minimalist<br>Positive</h3>
+                                                <p>Book Cover Design</p>
+                                            </div>
+                                            <i class="fa fa-star-o"></i>
+                                        </div><!--/.port-hover-->
+                                        <img alt="works" src="images/Art/6.png">
+                                    </a>
+                                </div>
+                                
+                                
+                            </div><!--/.portfolio-body-->
+                        </div><!--/.row-->
+                        
+        	</div><!--/.container-->
+        </div><!--/.works-->
+        <!--WORKS END-->
+		
+
+        
+        <!--BANNER START-->
+        <div  class="content dark-bg banner clearfix">
+        	<div class="container">
+           	  <div class="row">
+
+        	<div class="container animated" data-animated="fadeIn">
+        	  <blockquote>The idea that my life is that of a fairytale is in itself a fairytale. -Grace Kelly </blockquote>
+        	</div>
+        </div>
+</div><!--/.col-md-8-->
+            	</div><!--/.row-->
+        	</div><!--/.container-->
+        </div><!--/.banner-->
+        <!--BANNER END-->
+        
+        <footer class="footer clearfix">
+			<div class="container">
+            	<div class="footer-wigdet clearfix">
+                	<div class="row">
+                    	<div class="col-md-4">
+                        	<div class="widget text-widget">
+                                <img alt="logo" src="images/logo_white.png">                        	</div><!--/.widget-->
+                       	</div><!--/.col-md-4--> 
+                        
+                        <div class="col-md-4">
+                            <div class="widget text-widget">
+                            	<h3 class="widgettitle">How to Find Me</h3>
+<p><i class="fa fa-phone"></i> +65 97999606</p>
+                                <p><i class="fa fa-envelope"></i> <a href="#">nickie10106@gmail.com</a></p>
+</div><!--/.recent-post-->
+                        </div><!--/.col-md-4-->
+                        
+                        <div class="col-md-4">
+                            <div class="widget recent-post clearfix">
+                                <h3 class="widgettitle">Recent Posts</h3>
+                                
+                                <ul>
+                                    <li><a href="#">Coming Soon</a></li>
+                                    <li><a href="#">Coming Soon</a></li>
+                                    <li><a href="#">Coming Soon</a></li>
+                                    <li><a href="#">Coming Soon</a></li>
+                                </ul>
+                            </div><!--/.recent-post-->
+                        </div><!--/.col-md-4-->
+                       
+                    </div><!--/.row-->
+                </div><!--/.footer-widget-->
+            	<div class="row">
+                    <div class="col-md-6"> </div><!--/.col-md-6-->
+                    
+                    <div class="col-md-6 footer-box"> <!--/.team-icon-->
+                    </div><!--/.footer-box-->
+                </div><!--/.row-->			
+			</div><!--/.container-->
+		</footer><!--/.footer--> 
+        
+		<!-- The javascript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script type="text/javascript" src="js/modernizr.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery-migrate.js"></script>
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=YOUR_API_KEY&sensor=true"></script>
+		<script type="text/javascript" src="js/jquery.ui.map.js"></script>
+        <script type="text/javascript" src="js/superfish.js"></script>
+		<script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+		<script type="text/javascript" src="js/isotope.pkgd.js"></script>
+		<script type="text/javascript" src="js/jquery.fitvids.js"></script>
+		<script type="text/javascript" src="js/contact.js"></script>
+		<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src="js/owl.carousel.js"></script>
+		<script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
+		<script type="text/javascript" src="js/jquery.nav.js"></script>
+		<script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+        <script type="text/javascript" src="js/jquery.stellar.js"></script>
+		<script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
+		<script type="text/javascript" src="js/jquery.sticky.js"></script>
+		<script type="text/javascript" src="js/ticker.js"></script>
+        <script type="text/javascript" src="js/animate.js"></script>
+        <script type="text/javascript" src="js/imgbg.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+     	
+
+	<script language="JavaScript" type="text/JavaScript">
+
+<!-- cloak
+
+// Add all DIV's of hearts
+
+if (document.all||document.getElementById||document.layers){
+
+for (k=0;k<kisserCount;k=k+2) {
+
+  document.write('<div id="kisser' + k + '" class="kisser"><img src="' + theimage + '" alt="" border="0"></div>\n')
+
+  document.write('<div id="kisser' + (k+1) + '" class="kisser"><img src="' + theimage2 + '" alt="" border="0"></div>\n')
+
+}
+
+}
+
+
+
+// decloak -->
+
+</script>
+
+
+
+<p align="center"><font face="Arial" size="-2">Free DHTML scripts provided by<br>
+
+<a href="http://www.dynamicdrive.com">Dynamic Drive</a></font></p>
+			</body>
+</html>
